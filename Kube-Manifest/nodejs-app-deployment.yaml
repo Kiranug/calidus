@@ -19,5 +19,3 @@ spec:
           image: kiranacrdevops.azurecr.io/app1/calidusnodjs
           ports:
             - containerPort: 3000
-      imagePullSecrets:
-        - name: acrpull-secret
