@@ -2,9 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nodejs-app-ingress
-  annotations:
-    kubernetes.io/ingress.class: nginx
 spec:
+  ingressClassName: nginx  # Replace the deprecated annotation with this field
   rules:
     - host: your-ingress-domain.com  # Replace with your domain or wildcard
       http:
