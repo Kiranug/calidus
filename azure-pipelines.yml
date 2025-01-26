@@ -4,7 +4,7 @@ trigger:
 variables:
   # Use the service connection ID for ACR access
   dockerRegistryServiceConnection: 'myacrcred'  # The service connection name for ACR
-  imageRepository: 'app1/app1nginx'
+  imageRepository: 'app1/calidusnodjs'
   containerRegistry: 'aksdevopsacr.azurecr.io'  # Your ACR URL
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   manifestsPath: 'Kube-Manifest/'
