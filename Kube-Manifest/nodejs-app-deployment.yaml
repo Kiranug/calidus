@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nodejs-app
-          image: kiranacrdevops.azurecr.io/app1/calidusnodjs
+          image: kiranacrdevops.azurecr.io/app1/calidusnodjs:$(Build.BuildId)
           ports:
             - containerPort: 3000
       imagePullSecrets:
