@@ -19,3 +19,34 @@ spec:
           image: kiranacrdevops.azurecr.io/app1/calidusnodjs
           ports:
             - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-app-service
+spec:
+  type: ClusterIP
+  selector:
+    app: nodejs-app
+  ports:
+    - port: 80
+      targetPort: 3000
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nodejs-app-ingress
+spec:
+  ingressClassName: nginx  # Replace the deprecated annotation with this field
+  rules:
+    - host: your-ingress-domain.com  # Replace with your domain or wildcard
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nodejs-app-service
+                port:
+                  number: 80
