@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nodejs-app
-          image: kiranacrdevops.azurecr.io/nodejs-app:v1.0
+          image: kiranacrdevops.azurecr.io/app1/calidusnodjs
           ports:
             - containerPort: 3000
       magePullSecrets:
