@@ -74,6 +74,6 @@ stages:
         connectionType: 'kubernetesServiceConnection'
         kubernetesServiceConnection: 'myakscred'
         namespace: 'default'
-        manifests: '$(System.DefaultWorkingDirectory)/Kube-Manifest/*.yaml'
-        containers: 'kiranacrdevops.azurecr.io/app1/calidusnodjs'
+        manifests: '$(System.DefaultWorkingDirectory)/Kube-Manifest/nodejs-app-deployment.yaml'
+        containers: 'kiranacrdevops.azurecr.io/app1/calidusnodjs:$(Build.BuildId)'
         imagePullSecrets: 'acrpullapp1'
