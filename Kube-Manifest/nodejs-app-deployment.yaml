@@ -19,3 +19,5 @@ spec:
           image: kiranacrdevops.azurecr.io/nodejs-app:v1.0
           ports:
             - containerPort: 3000
+      magePullSecrets:
+        - name: defaltaksacr-secret
