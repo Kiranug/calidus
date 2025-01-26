@@ -19,3 +19,5 @@ spec:
           image: $(containerRegistry)/$(imageRepository):$(tag)
           ports:
             - containerPort: 3000
+      imagePullSecrets:
+        - name: acrpull-secret
