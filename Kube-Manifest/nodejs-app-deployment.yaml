@@ -19,5 +19,5 @@ spec:
           image: kiranacrdevops.azurecr.io/app1/calidusnodjs
           ports:
             - containerPort: 3000
-      magePullSecrets:
+      imagePullSecrets:
         - name: defaltaksacr-secret
