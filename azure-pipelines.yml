@@ -61,13 +61,3 @@ stages:
         echo "Image Repository: $(imageRepository)"
         echo "Tag: $(tag)"
       displayName: 'Debug Variables'
-      
-    - task: KubernetesManifest@0
-      displayName: Deploy Kubernetes Manifests to AKS
-      inputs:
-        kubernetesServiceConnection: $(k8sServiceConnection)
-        namespace: default
-        manifests: |
-          $(System.DefaultWorkingDirectory)/$(manifestsPath)/*.yaml
-        containers: |
-          $(containerRegistry)/$(imageRepository):$(tag)
