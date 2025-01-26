@@ -19,7 +19,7 @@ stages:
   jobs:
   - job: Build
     displayName: Build and Push Docker Image to ACR
-    pool:
+    pool: "Default"
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
