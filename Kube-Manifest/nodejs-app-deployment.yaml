@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nodejs-app
-          image: $(containerRegistry)/$(imageRepository):$(tag)
+          image: kiranacrdevops.azurecr.io/app1/calidusnodjs
           ports:
             - containerPort: 3000
       imagePullSecrets:
