@@ -10,15 +10,15 @@ variables:
   manifestsPath: 'Kube-Manifests/'
   k8sServiceConnection: 'myakscred' 
   tag: '$(Build.BuildId)'
-
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
 stages:
 - stage: BuildAndPush
   displayName: Build and Push Docker Image
   jobs:
   - job: Build
     displayName: Build and Push Docker Image to ACR
-    pool:
-      vmImage: 'ubuntu-latest'
+    pool: "Default"
     steps:
     - task: Docker@2
       displayName: Build and Push Docker Image
@@ -60,8 +60,7 @@ stages:
   jobs:
   - job: Deploy
     displayName: Deploy to AKS using Kubernetes Manifests
-    pool:
-      vmImage: 'ubuntu-latest'
+    pool: "Default"
     steps:
     - checkout: self
     - task: KubernetesManifest@0
