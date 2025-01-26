@@ -39,7 +39,7 @@ stages:
     # Target Directory: $(Build.ArtifactStagingDirectory)
     - task: CopyFiles@2
       inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)/19-Azure-DevOps-with-AKS/19-01-Azure-DevOps-BuildandPush-to-ACR/Git-Repository-files/kube-manifests'
+        SourceFolder: '$(System.DefaultWorkingDirectory)/Kube-Manifests'
         Contents: '**'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
         OverWrite: true
